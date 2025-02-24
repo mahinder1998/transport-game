@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'Rubber-Duck';
+    src: url('../fonts/RubberDuckRegular.woff2') format('woff2'), url('../fonts/RubberDuckRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Rubber-Duck';
+}
+.hidden{
+    display: none;
+}
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.intro {
+    background-color: #c67c2c;
+}
+.inner{
+    position: relative;
+}
+.inner img{
+    width: 100%;
+}
+.play-button {
+    position: absolute;
+    width: 10%;
+    top: 15%;
+    right: 25%;
+}
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/images/Forest.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.transport-wrap {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: 18vw;
+    height: 96vh;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+}
+.transport-panel{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.transport-panel img {
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.transport-panel img#camel {
+    width: 9vw;
+}
+.transport-panel img#boy {
+    height: 12vw;
+}
+.transport-panel img#boat {
+    height: 5vw;
+}
+.transport-panel img#elephant {
+    height: 6vw;
+}
+.guide-boy {
+    position: absolute;
+    bottom: 0;
+    left: 15vw;
+    width: 10vw;
+}
+.moving-transport {
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    width: 120px;
+    height: auto;
+    animation: moveLeft 8s linear forwards;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+.overlay.active-popup {
+    visibility: visible;
+    opacity: 1;
+}
+#animation-section img {
+    position: absolute;
+    width: 10vw;
+}
+.elephant-animation {
+    right: -10%;
+    animation: moveElephant 15s linear forwards;
+    bottom: 4.5vw;
+}
+.camel-animation {
+    right: -10%;
+    animation: moveCamel 15s linear forwards;
+    bottom: 12.5vw;
+}
+.boat-animation {
+    right: -10%;
+    animation: moveBoat 15s linear forwards;
+    bottom: 4.5vw;
+}
+.boy-animation {
+    right: -10%;
+    animation: moveBoy 15s linear forwards;
+    bottom: 2.5vw;
+}
+/* Right to Left Animation */
+@keyframes moveElephant {
+    0% {
+        right: -10%;
+   }
+    100% {
+        right: 100%;
+   }
+}
+@keyframes moveCamel {
+    0% {
+        right: -10%;
+   }
+    100% {
+        right: 100%;
+   }
+}
+@keyframes moveBoat {
+    0% {
+        right: -10%;
+   }
+    100% {
+        right: 100%;
+   }
+}
+@keyframes moveBoy {
+    0% {
+        right: -10%;
+   }
+    100% {
+        right: 100%;
+   }
+}
+.popup img{
+    max-width:28vw;
+}
+.popup.popup-wrong {
+    position: relative;
+}
+.popup h2 {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    font-weight: normal;
+    color: #000000;
+}
+.overlay .popup {
+    transform: translateY(150%);
+    transition: all .3s ease-in-out;
+}
+.overlay.active-popup .popup {
+    transform: translateY(0);
+}
+
+@media(max-width:1199px){
+    .boy-animation {
+        bottom: 4vw;
+    }
+}
+@media(max-width:991px){
+    .transport-wrap {
+        height: auto; 
+        top: auto;
+    }
+    .boy-animation {
+        bottom: 5vw;
+    }
+}
+@media(max-width:767px){
+    .boy-animation {
+        bottom: 10vw;
+    }
+}

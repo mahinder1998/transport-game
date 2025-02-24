@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <title>Transport Race Game</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container" id="gameScreen">
+    
+        <!-- Transport Selection Panel -->
+        <div class="transport-wrap">
+            <div class="transport-panel">
+                <img src="assets/images/Camel.png" alt="Camel" id="camel">
+                <img src="assets/images/Walk.png" alt="Boy" id="boy">
+                <img src="assets/images/Boat.png" alt="Boat" id="boat">
+                <img src="assets/images/Elephant.png" alt="Elephant" id="elephant">
+            </div>
+            <img src="assets/images/Guide.png" class="guide-boy" id="guide" alt="Guide Boy">
+        </div>
+    
+        <!-- Animation Section -->
+        <div id="animation-section">
+            <img src="assets/images/Elephant.png" class="elephant-animation hidden" id="moving-elephant">
+            <img src="assets/images/Camel.png" class="camel-animation hidden" id="moving-camel">
+            <img src="assets/images/Boat.png" class="boat-animation hidden" id="moving-boat">
+            <img src="assets/images/leftWalk.gif" class="boy-animation hidden" id="moving-boy">
+        </div>
+    
+        <!-- Popups -->
+        <div class="overlay" id="correctPopup">
+            <div class="popup">
+                <img src="assets/images/popup-new.png" alt="popup">
+                <h2>Excellent!</h2>
+            </div>
+        </div>
+        <div class="overlay  " id="wrongPopup">
+            <div class="popup popup-wrong">
+                <img src="assets/images/popup-new.png" alt="popup">
+                <h2>Wrong,<br> Try Again!</h2>
+            </div>
+        </div>
+        <div class="overlay" id="winPopup">
+            <div class="popup win-popup">
+                <img src="assets/images/popup-new.png" alt="popup">
+                <h2>Great! <br> You Won!</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
